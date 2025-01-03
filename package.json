@@ -1,11 +1,11 @@
 {
-  "name": "parcel-project-template",
+  "name": "hw-5",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://goitacademy.github.io/parcel-project-template",
+  "homepage": "https://davidmitseruk.github.io/hw-5",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build src/*.html --public-url /hw-5/"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,9 @@
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0"
+    "chart.js": "^4.4.7",
+    "modern-normalize": "^1.1.0",
+    "pnotify": "^5.2.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
