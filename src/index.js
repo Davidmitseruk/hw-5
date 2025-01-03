@@ -127,13 +127,36 @@ btn.addEventListener('click', () => {
 function updateKeys(){
     return getRandomKeys(allKeys, 10);
 }
-function handleKeyPress(e){
-    e.preventDefault();
-    if(currentKeyIndex < randomKeys.length){
-        const expect = randomKeys[currentKeyIndex];
-        if(e.code === `Key $[expect]` || e.code === `Digit $[expect]`){
-            const success = success({text: 'Your press the right key!!', dalay: 200,});
-        }
-    }
 
+function handleKeyPress(e) { 
+  e.preventDefault(); 
+  if (currentKeyIndex < randomKeys.length) { 
+    const expecte = randomKeys[currentKeyIndex]; 
+ 
+    if ( 
+      e.code === `Key${expecte}` ||  e.code === `Digit${expecte}` 
+    ) { 
+      const success = success({ 
+        text: 'Your press the right key!!', 
+        dalay: 200, 
+      }); 
+      currentKeyIndex++; 
+ 
+      if (currentKeyIndex < randomKeys.length) { 
+        key.textContent = `${randomKeys[currentKeyIndex]}`; 
+      } else { 
+        const success2 = success({ 
+          text: 'You win! Please, press to the button and start new game', 
+          dalay: 200, 
+        }); 
+        key.textContent = 'Press "New game" to restart.'; 
+        document.removeEventListener('keydown', handleKeyPress); 
+      } 
+    } else { 
+      const error = error({ 
+        text: 'Your press the wrong key, please, try again', 
+        dalay: 200, 
+      }); 
+    } 
+  } 
 }
